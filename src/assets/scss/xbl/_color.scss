@@ -33,8 +33,9 @@ $colors: (
   }
 }
 .hover-dark:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--hover-dark);
 }
+
 .zebra > *:nth-child(even) {
   background-color: var(--bg0);
 }

@@ -4,9 +4,9 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Input } from "../components/xbl/Form";
 import { toggleTheme } from "../redux/settings";
 import useOnOutside from "../hooks/useOnOutside";
+import { Ripple, Input } from "../components/xbl";
 
 const MenuFooter = ({ user }) => {
     const settings = useSelector(state => state.settings.value);
@@ -38,10 +38,12 @@ const MenuFooter = ({ user }) => {
                         <hr />
 
                         {
-                            ["Account", "Settings", "Clear cache", "Logout"].map((e) => <div key={e} className="flex aic p25 hover-dark cp f09">
-                                <span className="icon br50 ix-quality cgray9 ic30 ic mr25" />
-                                <span>{e}</span>
-                            </div>)
+                            ["Account", "Settings", "Clear cache", "Logout"].map((e) => <Ripple key={e} >
+                                <div className="flex aic p25 hover-dark cp f09">
+                                    <span className="icon br50 ix-quality cgray9 ic30 ic mr25" />
+                                    <span>{e}</span>
+                                </div>
+                            </Ripple>)
                         }
 
                         <div className="flex aic jcsb p1 f09">

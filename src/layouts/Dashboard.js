@@ -5,6 +5,7 @@ import Logo from "../components/logo";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setUserDetails } from "../redux/user";
+import { Ripple } from "../components/xbl";
 import rawlist from "./menu";
 import MenuFooter from "./MenuFooter";
 
@@ -118,13 +119,15 @@ function MenuItem({ e, active, setActive, submenu, setSubmenu }) {
             setSubmenu(e.url);
         }
     }
-    return <div className={`item br10 ${(e.url === active) || (submenu && e.url === submenu) ? "active" : ""}`} onClick={changehandler}>
-        <Link to={e.url} className={`wrap p40 br10 ${!e.icon ? "pl50 p50" : ""}`}>
-            {
-                e.icon && <span className={`icon br50 ix-${e.icon} ic30 ic cgray9`} />
-            }
-            {e.name}</Link>
-    </div>
+    return <Ripple onClick={changehandler}>
+        <div className={`item br10 ${(e.url === active) || (submenu && e.url === submenu) ? "active" : ""}`}>
+            <Link to={e.url} className={`wrap p40 br10 ${!e.icon ? "pl50 p50" : ""}`}>
+                {
+                    e.icon && <span className={`icon br50 ix-${e.icon} ic30 ic cgray9`} />
+                }
+                {e.name}</Link>
+        </div>
+    </Ripple>
 }
 
 
@@ -132,13 +135,15 @@ function MenuItem({ e, active, setActive, submenu, setSubmenu }) {
 function Submenu({ e, active, setActive, submenu, setSubmenu }) {
 
     return <div className={`item cp br10 ofh ${active === e.name ? "active mt25 mb25" : ""}`}>
-        <div className="wrap jcsb aic p25 pr50" onClick={() => setActive(e.name)}>
-            <div className="flex aic">
-                <span className={`icon br50 ix-${e.icon} ic30 ic cgray9`} />
-                <span>{e.name}</span>
+        <Ripple onClick={() => setActive(e.name)}>
+            <div className="wrap jcsb aic p25 pr50">
+                <div className="flex aic">
+                    <span className={`icon br50 ix-${e.icon} ic30 ic cgray9`} />
+                    <span>{e.name}</span>
+                </div>
+                <span className={`ix-arrow f08 ic tr4 ${active === e.name ? "rot180" : ""}`} />
             </div>
-            <span className={`ix-arrow f08 ic tr4 ${active === e.name ? "rot180" : ""}`} />
-        </div>
+        </Ripple>
         {
             active === e.name && <div className="submenu f09 p50">
                 {e.children.map((f, j) => <MenuItem key={j} e={f} submenu={submenu} setSubmenu={setSubmenu} />)}

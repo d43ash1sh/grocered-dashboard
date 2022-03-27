@@ -227,6 +227,9 @@ $opacitys: (
   -webkit-box-orient: vertical;
 }
 
+.lh1 {
+  line-height: 1;
+}
 .lh14 {
   line-height: 1.4;
 }
@@ -276,6 +279,9 @@ $zindexs: (
   }
 }
 
+.rs:before {
+  content: "₹";
+}
 hr {
   border: none;
   height: 1px;

@@ -1,6 +1,98 @@
-import { useState } from "react";
+import React, { useState, cloneElement } from "react";
+import useRipple from "../../hooks/useRipple";
 import useFocus from "../../hooks/useFocus";
 
+
+
+/*--------------------------
+          LAYOUTS
+-------------------------*/
+export const Col = ({ xs, sm, md, lg, xl, xxl, k2, className, children }) => {
+    const classNames = [];
+    if (xs) {
+        classNames.push(`w${xs}`);
+    }
+    if (sm) {
+        classNames.push(`sm-w${sm}`);
+    }
+    if (md) {
+        classNames.push(`md-w${md}`);
+    }
+    if (lg) {
+        classNames.push(`lg-w${lg}`);
+    }
+    if (xl) {
+        classNames.push(`xl-w${xl}`);
+    }
+    if (xxl) {
+        classNames.push(`xxl-w${xxl}`);
+    }
+    if (k2) {
+        classNames.push(`k2-w${k2}`);
+    }
+
+
+
+    classNames.push(className);
+
+    return <div className={classNames.join(" ")}>
+        {children}
+    </div>
+}
+
+
+
+
+
+export const Bull = ({ list, className }) => {
+
+    return <div className={`flex aic ${className}`}>
+        {
+            list.map((e, i) => <>
+                {
+                    i > 0 && <span className="ml25 mr25 f18 cgrayc lh1">&bull;</span>
+                }
+                <span>{e}</span>
+            </>)
+        }
+    </div>
+}
+/*--------------------------
+          LAYOUTS
+-------------------------*/
+
+
+
+/*--------------------------
+          RIPPLE
+-------------------------*/
+export const Ripple = ({ children, onClick }) => {
+    const { coords, rippleClick } = useRipple();
+
+    return (
+        <>
+            {cloneElement(children, {
+                className: `${children.props.className} ripple`,
+                onMouseDown: (e) => rippleClick(e),
+                onClick,
+                style: coords
+            })}
+        </>
+    );
+};
+/*--------------------------
+          RIPPLE
+-------------------------*/
+
+
+
+
+
+
+
+/*--------------------------
+          FORM
+-------------------------*/
 export const Input = (props) => {
     const {
         type = "text",
@@ -119,3 +211,8 @@ export const Spinner = ({ size = "" }) => {
         </div>
     </div>
 }
+/*--------------------------
+          FORM
+-------------------------*/
+
+

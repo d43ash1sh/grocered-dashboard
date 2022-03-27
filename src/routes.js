@@ -5,7 +5,7 @@ import React from "react";
 
 // Layouts
 import EmptyLayout from "./layouts/Empty";
-import DefaultLayout from "./layouts/Default";
+import DashboardLayout from "./layouts/Dashboard";
 
 // Sitemap
 import SitemapPage from "./pages/sitemap";
@@ -30,7 +30,7 @@ const routes = [
     },
     {
         path: "dashboard",
-        element: <DefaultLayout />,
+        element: <DashboardLayout />,
         children: [
             {
                 path: "",

@@ -86,7 +86,7 @@ const list = [
     },
 
     {
-        name: "web dynamics",
+        name: "Web dynamics",
         icon: "quality",
         url: "/web-dynamics",
     },

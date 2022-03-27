@@ -1,5 +1,5 @@
 /*--------------- default button-------------*/
-.but {
+.btn {
   padding: 10px 30px;
   border-radius: 8px;
   border: unset;
@@ -15,16 +15,6 @@
     font-size: 0.9em;
     padding: 12px 60px;
   }
-
-  &.theme {
-    color: #fff;
-  }
-
-  &.theme_line {
-    color: var(--theme);
-    border: 1px solid var(--theme);
-    background: transparent;
-  }
 }
 
 button:disabled {
@@ -34,10 +24,22 @@ button:disabled {
 
 /*---------------button medium-------------*/
 
-.butm {
+.mbtn {
   padding: 5px 10px;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
+}
+
+.btn,
+.mbtn {
+  &.theme {
+    color: #fff;
+  }
+
+  &.theme-t8 {
+    color: var(--theme);
+  }
 
   &.theme_line {
     color: var(--theme);
