@@ -29,7 +29,7 @@ const list = [
         url: "/feedback",
     },
     {
-        name: "Human resource",
+        name: "HR",
         icon: "job",
         url: "/hr",
     },
@@ -70,9 +70,9 @@ const list = [
         ]
     },
     {
-        name: "Local businesses",
+        name: "Locals",
         icon: "shop",
-        url: "/local-businesses",
+        url: "/locals",
     },
     {
         name: "Users",

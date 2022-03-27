@@ -14,16 +14,17 @@ const Empty = ({ children }) => {
     const dispatch = useDispatch();
     const [active, setActive] = useState("/dashboard");
     const [submenu, setSubmenu] = useState("/");
-    const [list, setSearch] = useState(rawlist);
+    const [list, setList] = useState(rawlist);
+    const [search, setSearch] = useState("");
 
 
     const f = 0;
 
-    const searchHandler = (e) => {
-        const v = e.target.value;
+    const searchHandler = (v) => {
+        setSearch(v);
 
         if (v === "") {
-            setSearch(rawlist);
+            setList(rawlist);
             return;
         }
 
@@ -39,22 +40,27 @@ const Empty = ({ children }) => {
                 return false;
             }
         );
-        setSearch(temp);
+        setList(temp);
     }
 
     return (
         <div className="main">
             <div id="sidebar" className="h100 t0 l0 pf z10 cgray7">
-                <div className="content pa t0 l0 w100 ofya tscroll p10 pr0">
+                <div className="content pa t0 l0 w100 ofys tscroll p10 pr0">
                     <Logo alt="Logo" width="140px" className="mb1 mt1" />
 
-                    <div className="flex aic mb1 graye p25 br10 ofh">
+                    <div className="flex aic mb1 graye p25 pl50 br10 ofh pr">
                         <input
-                            className="trans cgray7 bor0 p25"
+                            className="trans cgray7 bor0 p25 w100"
                             placeholder="Search..."
-                            onChange={searchHandler}
+                            onChange={(e) => searchHandler(e.target.value)}
+                            value={search}
                         />
-                        <span className="ix-search ic pr25 pl10" onClick={() => setSearch(rawlist)} />
+                        <div className="cp search-icon pr50 pl25 f08 pr ic30">
+                            <span show={search.length === 0 ? "1" : "0"} className="ix-search ic tr4 ic30 pa t0 r0" />
+                            <span show={search.length === 0 ? "0" : "1"} className="ix-x ic tr4 ic30 pa t0 r0" onClick={() => searchHandler("")} />
+                        </div>
+
                     </div>
 
                     {
