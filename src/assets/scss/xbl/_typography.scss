@@ -1,0 +1,92 @@
+/*----weight----*/
+.bold {
+  font-weight: 500;
+}
+.bolder {
+  font-weight: 600;
+}
+.boldest {
+  font-weight: 700;
+}
+
+.fwn {
+  font-weight: 400;
+}
+.thin {
+  font-weight: 400;
+  font-weight: 300;
+}
+.thiner {
+  font-weight: 200;
+}
+.thinest {
+  font-weight: 100;
+}
+/*----weight----*/
+
+/*----font-style----*/
+.fsn {
+  font-style: normal;
+}
+.i {
+  font-style: italic;
+}
+/*----font-style----*/
+
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+.tj {
+  text-align: justify;
+}
+.tr {
+  text-align: right;
+}
+
+.tdn {
+  text-decoration: none;
+}
+.tdu {
+  text-decoration: underline;
+}
+
+.ttu {
+  text-transform: uppercase;
+}
+.ttc {
+  text-transform: capitalize;
+}
+.ttl {
+  text-transform: lowercase;
+}
+
+$maxwidths: (
+  "06": 0.6em,
+  "08": 0.8em,
+  "09": 0.9em,
+  1: 1em,
+  11: 1.1em,
+  12: 1.2em,
+  14: 1.4em,
+  16: 1.6em,
+  18: 1.8em,
+  2: 2em,
+  3: 3em,
+  4: 4em,
+  5: 5em,
+);
+@each $k, $v in $maxwidths {
+  .f#{$k} {
+    font-size: $v;
+  }
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    padding: 0;
+    margin: 0;
+  }
+}

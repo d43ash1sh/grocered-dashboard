@@ -1,0 +1,79 @@
+$theme: #00dbea;
+
+/*---------------declare variables--------------*/
+:root {
+  --font: "Poppins", Helvetica, sans-serif, arial;
+
+  --theme: #{$theme};
+  --accent: #3f6cff;
+
+  --theme-l10: #{lighten($theme, 10)};
+  --theme-d10: #{darken($theme, 10)};
+  --theme-t8: #{transparentize($theme, 0.85)};
+  --theme-t9: #{transparentize($theme, 0.93)};
+
+  --gray4: #1b2131;
+  --gray5: #22273c;
+  --gray6: #2e3349;
+  --gray7: #373c51;
+  --gray8: #3f4459;
+  --gray9: #4b5066;
+  --graya: #555a70;
+  --grayb: #a7adc2;
+  --grayc: #b9bdcc;
+  --grayd: #e9ebf3;
+  --graye: #eff1f7;
+
+  --bg: #f6f8fa;
+
+  --white: #ffffff;
+  --black: #181b2a;
+
+  --red: #f35177;
+  --orange: #ff9a57;
+  --yellow: #feef90;
+  --green: #01d48e;
+  --blue: #3c7eff;
+}
+
+[theme="dark"]:root {
+  --theme: #{$theme};
+
+  --gray4: #c6cfe2;
+  --gray5: #b4c0d9;
+  --gray6: #96a4c3;
+  --gray7: #8b98b3;
+  --gray8: #75829c;
+  --gray9: #5f6b84;
+  --graya: #495368;
+  --grayb: #3e485d;
+  --grayc: #393e56;
+  --grayd: #2e3349;
+  --graye: #22273c;
+
+  --bg: #181b2a;
+
+  --white: #1b2131;
+  --black: #dbdfe8;
+}
+
+$breakpoints: (
+  "xs": 0px,
+  "sm": 584px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+  "k2": 1920px,
+  "k4": 2560px,
+);
+/*
+$xs: 0px;
+$sm: 584px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+$k2: 1920px;
+$k4: 2560px;
+*/

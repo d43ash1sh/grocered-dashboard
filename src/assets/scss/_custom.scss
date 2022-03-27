@@ -1,0 +1,48 @@
+$sidebar: 280px;
+
+#sidebar {
+  border-right: 1px solid var(--greyc);
+  width: $sidebar;
+
+  @include media("md", max) {
+    display: none;
+  }
+
+  .item {
+    border-radius: 10px;
+    > a {
+      padding: 7px;
+      display: flex;
+      align-items: center;
+      .icon {
+        margin-right: 10px;
+      }
+    }
+
+    &.active {
+      background-color: var(--theme-t8);
+      color: var(--theme);
+      font-weight: 500;
+    }
+    &:not(.active):hover {
+      background-color: var(--theme-t9);
+      color: var(--theme);
+    }
+  }
+}
+
+#content {
+  @include media("md") {
+    width: calc(100% - $sidebar);
+    margin-left: $sidebar;
+  }
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 10px;
+
+  .header {
+    background-color: var(--graye);
+  }
+}

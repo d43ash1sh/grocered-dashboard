@@ -1,0 +1,61 @@
+.editor {
+  background: var(--white);
+  border-radius: 6px;
+  overflow: hidden;
+
+  a {
+    text-decoration: underline;
+    color: var(--theme);
+  }
+
+  .controls {
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sbtn {
+    margin: 2px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      z-index: 1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: var(--bg0);
+      transform: scale(0.4);
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 0;
+    }
+
+    &.active:after,
+    &:hover:after {
+      transform: scale(1);
+      opacity: 1;
+    }
+    &.active {
+      color: var(--theme);
+      &:after {
+        background-color: var(--theme-01);
+      }
+    }
+  }
+
+  .DraftEditor-root {
+    padding: 1rem;
+  }
+}

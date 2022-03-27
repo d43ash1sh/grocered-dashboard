@@ -1,0 +1,40 @@
+/*-----------------------background-----------------------*/
+// bg0 - background at 0th level (Elevation = bottom most layer)
+// bg1 - background at 1st level (Elevation = layer 1 from bottom)
+
+$colors: (
+  trans: transparent,
+  "white": var(--white),
+  "black": var(--black),
+  bg: var(--bg),
+  graye: var(--graye),
+  grayd: var(--grayd),
+  grayc: var(--grayc),
+  grayb: var(--grayb),
+  graya: var(--graya),
+  gray9: var(--gray9),
+  gray8: var(--gray8),
+  gray7: var(--gray7),
+  gray6: var(--gray6),
+  gray5: var(--gray5),
+  gray4: var(--gray4),
+  theme: var(--theme),
+  theme-l10: var(--theme-l10),
+  theme-d10: var(--theme-d10),
+  theme-t8: var(--theme-t8),
+  theme-t9: var(--theme-t9),
+);
+@each $k, $v in $colors {
+  #{"." + $k} {
+    background-color: $v;
+  }
+  .c#{$k} {
+    color: $v;
+  }
+}
+.hover-dark:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.zebra > *:nth-child(even) {
+  background-color: var(--bg0);
+}
