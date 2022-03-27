@@ -1,10 +1,10 @@
 /*----------------margin------------------*/
 $margins: (
-  auto: auto,
-
   8: 8px,
   10: 10px,
+
   25: 0.25rem,
+  40: 0.4rem,
   50: 0.5rem,
   75: 0.75rem,
   1: 1rem,
@@ -17,16 +17,22 @@ $margins: (
   5: 5rem,
   0: 0,
 );
+
+.mauto {
+  margin: auto;
+}
 @each $k, $v in $margins {
   .m#{$k} {
     margin: $v;
   }
-
   .mt#{$k} {
     margin-top: $v;
   }
   .mr#{$k} {
     margin-right: $v;
+  }
+  .mb#{$k} {
+    margin-bottom: $v;
   }
   .ml#{$k} {
     margin-right: $v;
@@ -35,9 +41,14 @@ $margins: (
   .p#{$k} {
     padding: $v;
   }
-
+  .pt#{$k} {
+    padding-top: $v;
+  }
   .pr#{$k} {
     padding-right: $v;
+  }
+  .pb#{$k} {
+    padding-bottom: $v;
   }
   .pl#{$k} {
     padding-left: $v;

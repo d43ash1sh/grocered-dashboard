@@ -1,69 +1,97 @@
 /*
 https://glyphter.com
-xbl7@xbytelab.com
+dashboard@grocered.in
 Qwerty098#
 */
 
 @font-face {
-  font-family: "xbl";
-  src: url("../../fonts/xbl.woff");
+  font-family: "dashboard grocered";
+  src: url("../../fonts/dashboard-grocered.woff");
   font-weight: normal;
   font-style: normal;
 }
-[class*="xbl-"]:before {
+[class*="ix-"]:before {
   display: inline-block;
-  font-family: "xbl";
+  font-family: "dashboard grocered";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.xbl-strikethrough:before {
+
+.ix-box:before {
   content: "\0041";
 }
-.xbl-underline:before {
+.ix-call:before {
   content: "\0042";
 }
-.xbl-undo:before {
+.ix-cart:before {
   content: "\0043";
 }
-.xbl-unlink:before {
+.ix-chat:before {
   content: "\0044";
 }
-.xbl-align-center:before {
+.ix-cod:before {
   content: "\0045";
 }
-.xbl-align-justify:before {
+.ix-delivery:before {
   content: "\0046";
 }
-.xbl-align-left:before {
+.ix-feedback:before {
   content: "\0047";
 }
-.xbl-align-right:before {
+.ix-home:before {
   content: "\0048";
 }
-.xbl-bold:before {
+.ix-job:before {
   content: "\0049";
 }
-.xbl-italic:before {
+.ix-location:before {
   content: "\004a";
 }
-.xbl-link:before {
+.ix-note:before {
   content: "\004b";
 }
-.xbl-list-bullet:before {
+.ix-quality:before {
   content: "\004c";
 }
-.xbl-list-numbered:before {
+.ix-shop:before {
   content: "\004d";
 }
-.xbl-redo:before {
+.ix-star:before {
   content: "\004e";
 }
-.xbl-monospace:before {
+.ix-story:before {
   content: "\004f";
 }
-.xbl-blockquote:before {
+.ix-user:before {
   content: "\0050";
+}
+.ix-verified:before {
+  content: "\0051";
+}
+.ix-whatsapp:before {
+  content: "\0052";
+}
+.ix-analytics:before {
+  content: "\0053";
+}
+.ix-arrow:before {
+  content: "\0054";
+}
+.ix-search:before {
+  content: "\0055";
+}
+.ix-settings:before {
+  content: "\0056";
+}
+.ix-x:before {
+  content: "\0057";
+}
+.ix-delete:before {
+  content: "\0058";
+}
+.ix-logout:before {
+  content: "\0059";
 }

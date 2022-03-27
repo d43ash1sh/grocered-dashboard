@@ -1,0 +1,15 @@
+#content {
+  @include media("md") {
+    width: calc(100% - $sidebar);
+    margin-left: $sidebar;
+  }
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 10px;
+
+  .header {
+    background-color: var(--graye);
+  }
+}

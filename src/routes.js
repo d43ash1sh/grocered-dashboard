@@ -36,6 +36,14 @@ const routes = [
                 path: "",
                 element: <DashboardPage />,
             },
+            {
+                path: "orders",
+                element: <DashboardPage />,
+            },
+            {
+                path: "refund",
+                element: <DashboardPage />,
+            },
         ]
     },
 ];

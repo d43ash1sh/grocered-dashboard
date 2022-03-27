@@ -275,9 +275,16 @@ $zindexs: (
 
 hr {
   border: none;
-  height: 2px;
+  height: 1px;
   margin: 0;
   background-color: var(--grayc);
+}
+
+input,
+textarea {
+  @include input-placeholder {
+    color: var(--gray7);
+  }
 }
 
 /*--while typing on mobile---*/
