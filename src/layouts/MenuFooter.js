@@ -16,6 +16,12 @@ const MenuFooter = ({ user }) => {
     const refFooter = useRef();
     useOnOutside(refFooter, () => setFooter(false));
 
+    const list = [
+        { name: "Account", icon: "user" },
+        { name: "Settings", icon: "settings" },
+        { name: "Clear cache", icon: "delete" },
+        { name: "Logout", icon: "logout" }]
+
     return <>
         <div className="footer content pa b0 l0 w100 p10 bg ">
             <div className="flex aic jcsb graye p50 br10 cp" onClick={() => setFooter(true)}>
@@ -38,10 +44,10 @@ const MenuFooter = ({ user }) => {
                         <hr />
 
                         {
-                            ["Account", "Settings", "Clear cache", "Logout"].map((e) => <Ripple key={e} >
+                            list.map((e, i) => <Ripple key={i} >
                                 <div className="flex aic p25 hover-dark cp f09">
-                                    <span className="icon br50 ix-quality cgray9 ic30 ic mr25" />
-                                    <span>{e}</span>
+                                    <span className={`icon br50 ix-${e.icon} cgraya ic30 ic mr25`} />
+                                    <span>{e.name}</span>
                                 </div>
                             </Ripple>)
                         }
