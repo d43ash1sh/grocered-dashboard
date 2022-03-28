@@ -39,3 +39,14 @@ $colors: (
 .zebra > *:nth-child(even) {
   background-color: var(--bg0);
 }
+
+// advance
+[theme="dark"] {
+  .white.bslg.dark {
+    background-color: var(--graye);
+    box-shadow: unset;
+  }
+  .dark-grayd {
+    background-color: var(--grayd);
+  }
+}

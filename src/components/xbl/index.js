@@ -1,4 +1,4 @@
-import React, { useState, cloneElement } from "react";
+import React, { useState, cloneElement, Fragment } from "react";
 import useRipple from "../../hooks/useRipple";
 import useFocus from "../../hooks/useFocus";
 
@@ -7,10 +7,13 @@ import useFocus from "../../hooks/useFocus";
 /*--------------------------
           LAYOUTS
 -------------------------*/
-export const Col = ({ xs, sm, md, lg, xl, xxl, k2, className, children }) => {
+export const Col = ({ xs, sm, md, lg, xl, xxl, k2, className, card, children }) => {
     const classNames = [];
     if (xs) {
         classNames.push(`w${xs}`);
+    }
+    else {
+        classNames.push(`w100`);
     }
     if (sm) {
         classNames.push(`sm-w${sm}`);
@@ -31,12 +34,12 @@ export const Col = ({ xs, sm, md, lg, xl, xxl, k2, className, children }) => {
         classNames.push(`k2-w${k2}`);
     }
 
-
-
     classNames.push(className);
 
     return <div className={classNames.join(" ")}>
-        {children}
+        {
+            card ? <div className={card}>{children}</div> : children
+        }
     </div>
 }
 
@@ -48,12 +51,12 @@ export const Bull = ({ list, className }) => {
 
     return <div className={`flex aic ${className}`}>
         {
-            list.map((e, i) => <>
+            list.map((e, i) => <Fragment key={i}>
                 {
                     i > 0 && <span className="ml25 mr25 f18 cgrayc lh1">&bull;</span>
                 }
                 <span>{e}</span>
-            </>)
+            </Fragment>)
         }
     </div>
 }
