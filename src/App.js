@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRoutes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,8 +8,29 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import useDarkMode from "./hooks/useDarkMode";
 
 import { setSettings } from "./redux/settings";
+import LoadingBar from "./components/loading/LoadingBar";
+
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+import usePalette from "./hooks/usePalette";
+
+
+
 
 const App = () => {
+    const palette = usePalette();
+
+    const theme = createTheme({
+        palette: palette,
+        typography: {
+            fontFamily: "\"Poppins\", Helvetica, sans-serif, arial",
+            button: {
+                textTransform: "none"
+            }
+        },
+    });
+
+
     const dispatch = useDispatch();
     const content = useRoutes(routes);
 
@@ -40,11 +61,17 @@ const App = () => {
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [settings])
+    }, [settings]);
+
 
 
     return <>
-        {content}
+        <ThemeProvider theme={theme}>
+            <Suspense fallback={<LoadingBar />}>
+                {content}
+            </Suspense>
+        </ThemeProvider>
+
     </>
 }
 

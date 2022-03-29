@@ -45,7 +45,7 @@ const Empty = ({ children }) => {
     }
 
     return (
-        <div className="main">
+        <>
             <div id="sidebar" className="h100 t0 l0 pf z10 cgray7">
                 <div className="content pa t0 l0 w100 ofys tscroll p10 pr0">
                     <Logo alt="Logo" width="140px" className="mb1 mt1" />
@@ -102,7 +102,7 @@ const Empty = ({ children }) => {
                 {children}
                 <Outlet />
             </div>
-        </div >
+        </>
     );
 };
 

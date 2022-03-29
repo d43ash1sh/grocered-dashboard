@@ -6,13 +6,7 @@ export default function index() {
         <div>
             <ol>
                 <li>
-                    <Link to="/">home</Link>
-                </li>
-                <li>
                     <Link to="/dashboard">dashboard</Link>
-                </li>
-                <li>
-                    <Link to="/xbl">Xbl framework</Link>
                 </li>
             </ol>
         </div>

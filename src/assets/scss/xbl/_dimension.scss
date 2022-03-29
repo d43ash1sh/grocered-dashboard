@@ -60,6 +60,15 @@ $margins: (
   padding-right: 0.25rem;
 }
 
+.px50 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px75 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 /*----------------height------------------*/
 $heights: (
   100: 100%,
@@ -99,6 +108,7 @@ $ics: (
   40: 40px,
   50: 50px,
   60: 60px,
+  100: 80px,
 );
 @each $k, $v in $ics {
   .ic#{$k} {
@@ -146,6 +156,12 @@ $ics: (
 
 .rot45 {
   transform: rotate(45deg);
+}
+.rot90 {
+  transform: rotate(90deg);
+}
+.rot-90 {
+  transform: rotate(-90deg);
 }
 .rot180 {
   transform: rotate(180deg);

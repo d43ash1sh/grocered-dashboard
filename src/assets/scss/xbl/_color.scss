@@ -35,9 +35,22 @@ $colors: (
 .hover-dark:hover {
   background-color: var(--hover-dark);
 }
+.accent-t8 {
+  background-color: #{transparentize($accent, 0.85)};
+}
+.awhite {
+  //always white
+  background-color: #fff;
+}
+.cwhite {
+  color: #fff;
+}
 
+.zebra > *:nth-child(odd) {
+  background-color: var(--graye);
+}
 .zebra > *:nth-child(even) {
-  background-color: var(--bg0);
+  background-color: var(--bg);
 }
 
 // advance

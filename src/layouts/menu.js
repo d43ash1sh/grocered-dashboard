@@ -23,26 +23,7 @@ const list = [
         icon: "chat",
         url: "/dashboard/chat",
     },
-    {
-        name: "Feedbacks",
-        icon: "feedback",
-        url: "/feedback",
-    },
-    {
-        name: "HR",
-        icon: "job",
-        url: "/hr",
-    },
-    {
-        name: "Vendor",
-        icon: "shop",
-        url: "/vendor",
-    },
-    {
-        name: "Analytics",
-        icon: "analytics",
-        url: "/analytics",
-    },
+
     {
         name: "Products",
         icon: "box",
@@ -70,50 +51,69 @@ const list = [
         ]
     },
     {
-        name: "Locals",
-        icon: "shop",
-        url: "/locals",
-    },
-    {
-        name: "Users",
-        icon: "user",
-        url: "/users",
-    },
-    {
         name: "Stories",
         icon: "story",
-        url: "/stories",
-    },
-
-    {
-        name: "Web dynamics",
-        icon: "quality",
-        url: "/web-dynamics",
-    },
-    {
-        name: "Credentials",
-        icon: "job",
-        url: "/credentials",
-    },
-    {
-        name: "Live tracking",
-        icon: "location",
-        url: "/live-tracking",
-    },
-    {
-        name: "Finance",
-        icon: "note",
-        url: "/finance",
+        url: "/dashboard/stories",
     },
     {
         name: "Notes",
         icon: "note",
-        url: "/notes",
+        url: "/dashboard/notes",
+    },
+    {
+        name: "Locals",
+        icon: "shop",
+        url: "/dashboard/locals",
+    },
+    {
+        name: "Feedbacks",
+        icon: "feedback",
+        url: "/dashboard/feedback",
+    },
+    {
+        name: "Analytics",
+        icon: "analytics",
+        url: "/dashboard/analytics",
+    },
+    {
+        name: "Vendor",
+        icon: "shop",
+        url: "/dashboard/vendor",
+    },
+
+    {
+        name: "Users",
+        icon: "user",
+        url: "/dashboard/users",
+    },
+    {
+        name: "Web dynamics",
+        icon: "quality",
+        url: "/dashboard/web-dynamics",
+    },
+    {
+        name: "Credentials",
+        icon: "job",
+        url: "/dashboard/credentials",
+    },
+    {
+        name: "Live tracking",
+        icon: "location",
+        url: "/dashboard/live-tracking",
+    },
+    {
+        name: "Finance",
+        icon: "note",
+        url: "/dashboard/finance",
     },
     {
         name: "Legals",
         icon: "note",
-        url: "/legals",
+        url: "/dashboard/legals",
+    }, {
+        name: "HR",
+        icon: "job",
+        url: "/dashboard/hr",
     },
 ];
 export default list;

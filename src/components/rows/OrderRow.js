@@ -11,9 +11,11 @@ const OrderRow = ({ data }) => {
 
     return <div className="flex aic jcsb hover-dark p8 cp">
         <div className="flex aic">
-            <div className="ic40 br50 grayd mr10"></div>
+            <div className="ic40 br50 grayd mr10 bc" style={{
+                backgroundImage: `url(${data.dp})`
+            }}></div>
             <div>
-                <div className="f09 bold cgray7">Jhon doe</div>
+                <div className="f09 bold cgray7">{data.name}</div>
                 <Bull className="f08 cgray9" list={[
                     "Tilapara",
                     "2 days ago"
@@ -22,7 +24,7 @@ const OrderRow = ({ data }) => {
         </div>
         <div className="flex aic">
             <div className="tc  cgray7 mr50">
-                <div className="rs bold">500</div>
+                <div className="rs bold">{data.amount.toLocaleString("en-IN")}</div>
                 <div className="f08 cgray9">14 items</div>
             </div>
             <div className="ic40 pr ">

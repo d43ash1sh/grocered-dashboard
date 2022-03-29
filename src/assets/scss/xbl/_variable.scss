@@ -1,11 +1,12 @@
 $theme: #00dbea;
+$accent: #3f6cff;
 
 /*---------------declare variables--------------*/
 :root {
   --font: "Poppins", Helvetica, sans-serif, arial;
 
   --theme: #{$theme};
-  --accent: #3f6cff;
+  --accent: #{$accent};
 
   --theme-l10: #{lighten($theme, 10)};
   --theme-d10: #{darken($theme, 10)};
