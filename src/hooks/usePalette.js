@@ -25,6 +25,13 @@ const THEME_PALETTE_LIGHT = {
     "700": "#3f4459",
     "800": "#373c51",
     "900": "#2e3349",
+    "A100": "#f00",
+    "A200": "#ff0",
+    "A400": "#0ff",
+    "A700": "#0f0"
+  },
+  background: {
+    paper: "#ffffff"
   }
 
 
@@ -37,8 +44,8 @@ const THEME_PALETTE_DARK = {
 
   mode: "dark",
   common: {
-    black: "dbdfe8",
-    white: "1b2131"
+    black: "#dbdfe8",
+    white: "#1b2131"
   },
   primary: {
     main: "#00c4d1"
@@ -54,6 +61,9 @@ const THEME_PALETTE_DARK = {
     "700": "#8b98b3",
     "800": "#96a4c3",
     "900": "#b4c0d9"
+  },
+  background: {
+    paper: "#1b2131"
   }
 };
 

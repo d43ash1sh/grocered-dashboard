@@ -23,6 +23,7 @@ $colors: (
   theme-d10: var(--theme-d10),
   theme-t8: var(--theme-t8),
   theme-t9: var(--theme-t9),
+  accent: var(--accent),
 );
 @each $k, $v in $colors {
   #{"." + $k} {

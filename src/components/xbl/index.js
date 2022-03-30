@@ -138,7 +138,7 @@ function InputBox(props) {
     return <div className={`ninput ${className}`} prefix={prefix}>
         {
             // formik compatibility
-            children ? children : <input {...rest} type={inputType} ref={inputRef} placeholder="." />
+            children ? children : <input {...rest} type={inputType} ref={inputRef} placeholder={label} />
         }
         <label>{label}</label>
         {
@@ -153,13 +153,21 @@ function InputBox(props) {
 
 
 
+
+
+
+
+
+
+
 function Textarea(props) {
     const {
+        className = "",
         label = "",
         ...rest
     } = props;
-    return <div className="ninput">
-        <textarea {...rest} placeholder="."></textarea>
+    return <div className={`ninput ${className}`}>
+        <textarea {...rest} placeholder={label}></textarea>
         <label>{label}</label>
     </div>
 }

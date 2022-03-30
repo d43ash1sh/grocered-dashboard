@@ -14,16 +14,14 @@ const list = [
                 url: "/dashboard/orders",
             }, {
                 name: "Return & refunds",
-                url: "/dashboard/refund",
+                url: "/dashboard/orders/returns",
+            },
+            {
+                name: "Cancelled",
+                url: "/dashboard/orders/cancelled",
             },
         ]
     },
-    {
-        name: "Chat",
-        icon: "chat",
-        url: "/dashboard/chat",
-    },
-
     {
         name: "Products",
         icon: "box",
@@ -38,17 +36,22 @@ const list = [
             },
             {
                 name: "Categories",
-                url: "/dashboard/categories",
+                url: "/dashboard/products/categories",
             },
             {
                 name: "Review pending",
-                url: "/dashboard/products/review",
+                url: "/dashboard/products/pending-review",
             },
             {
                 name: "Expiring soon",
-                url: "/dashboard/products/expring",
+                url: "/dashboard/products/expiring",
             },
         ]
+    },
+    {
+        name: "Chat",
+        icon: "chat",
+        url: "/dashboard/chat",
     },
     {
         name: "Stories",
@@ -63,13 +66,37 @@ const list = [
     {
         name: "Locals",
         icon: "shop",
-        url: "/dashboard/locals",
+        children: [
+            {
+                name: "All businesses",
+                url: "/dashboard/locals",
+            },
+            {
+                name: "Add business",
+                url: "/dashboard/locals/add",
+            },
+            {
+                name: "Categories",
+                url: "/dashboard/locals/categories",
+            },
+        ]
     },
+
     {
         name: "Feedbacks",
         icon: "feedback",
-        url: "/dashboard/feedback",
+        children: [
+            {
+                name: "All feedbacks",
+                url: "/dashboard/feedbacks",
+            },
+            {
+                name: "Internal feedback",
+                url: "/dashboard/feedbacks/internal",
+            },
+        ]
     },
+
     {
         name: "Analytics",
         icon: "analytics",
@@ -80,7 +107,6 @@ const list = [
         icon: "shop",
         url: "/dashboard/vendor",
     },
-
     {
         name: "Users",
         icon: "user",
@@ -90,6 +116,7 @@ const list = [
         name: "Web dynamics",
         icon: "quality",
         url: "/dashboard/web-dynamics",
+        hide: true
     },
     {
         name: "Credentials",
@@ -100,16 +127,19 @@ const list = [
         name: "Live tracking",
         icon: "location",
         url: "/dashboard/live-tracking",
+        hide: true
     },
     {
         name: "Finance",
         icon: "note",
         url: "/dashboard/finance",
+        hide: true
     },
     {
         name: "Legals",
         icon: "note",
         url: "/dashboard/legals",
+        hide: true
     }, {
         name: "HR",
         icon: "job",

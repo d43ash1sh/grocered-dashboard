@@ -119,6 +119,9 @@ function MenuItem({ e, active, setActive, submenu, setSubmenu }) {
             setSubmenu(e.url);
         }
     }
+
+    if (e.hide) return <></>
+
     return <Ripple onClick={changehandler}>
         <div className={`item br10 ${(e.url === active) || (submenu && e.url === submenu) ? "active" : ""}`}>
             <Link to={e.url} className={`wrap p40 br10 ${!e.icon ? "pl50 p50" : ""}`}>

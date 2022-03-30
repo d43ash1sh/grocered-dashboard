@@ -1,7 +1,7 @@
 /*--------------- default button-------------*/
 .btn {
   padding: 10px 30px;
-  border-radius: 8px;
+  border-radius: var(--input-radius);
   border: unset;
   cursor: pointer;
   overflow: hidden;
@@ -36,7 +36,8 @@ button:disabled {
 
 .btn,
 .mbtn {
-  &.theme {
+  &.theme,
+  &.accent {
     color: #fff;
   }
 

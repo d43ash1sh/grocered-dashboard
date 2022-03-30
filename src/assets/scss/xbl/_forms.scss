@@ -6,7 +6,8 @@ textarea {
 
 .ninput {
   position: relative;
-  margin-top: 30px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
   * {
     user-select: none;
@@ -14,10 +15,10 @@ textarea {
 
   input,
   textarea {
-    border: 1px solid #ccc;
+    border: 1px solid var(--grayb);
     color: var(--black);
     background: transparent;
-    border-radius: 6px;
+    border-radius: var(--input-radius);
     width: 100%;
     padding: 10px 15px;
     font-size: 18px;
@@ -30,6 +31,7 @@ textarea {
       color: transparent;
     }
   }
+
   textarea {
     resize: vertical;
   }
@@ -71,6 +73,20 @@ textarea {
     z-index: 3;
   }
 
+  &.no-border {
+    input,
+    textarea {
+      border: unset !important;
+      resize: none;
+      @include input-placeholder {
+        color: var(--gray9);
+      }
+    }
+    label {
+      display: none;
+    }
+  }
+
   .password-toggle {
     background-size: 25px;
     background-position: center;
@@ -97,6 +113,29 @@ textarea {
     label {
       left: 50px;
     }
+  }
+}
+
+.flat .ninput {
+  background-color: var(--graye);
+  border-radius: var(--input-radius);
+  input,
+  textarea {
+    border: unset !important;
+    padding: 17px 15px 5px;
+  }
+  label {
+    color: var(--gray7);
+  }
+
+  input:focus ~ label,
+  textarea:focus ~ label,
+  input:valid:not(:placeholder-shown) ~ label,
+  input:not(:placeholder-shown) ~ label,
+  textarea:valid:not(:placeholder-shown) ~ label {
+    transform: translateY(-11px);
+    font-size: 12px;
+    background: transparent;
   }
 }
 /*------input-------*/

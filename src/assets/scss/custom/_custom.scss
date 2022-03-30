@@ -49,3 +49,46 @@
     width: 0;
   }
 }
+
+// mui date picker
+
+.flat {
+  // date picker
+  .MuiOutlinedInput-input {
+    padding: 13px !important;
+    background-color: var(--graye) !important;
+    border-radius: var(--input-radius);
+  }
+  .MuiOutlinedInput-notchedOutline {
+    border: unset !important;
+  }
+  // date picker
+
+  // toggle button
+  .MuiToggleButton-root {
+    border: unset !important;
+  }
+
+  .MuiInput-underline {
+    background-color: var(--graye) !important;
+    &:before,
+    &:after {
+      display: none !important;
+    }
+  }
+
+  .MuiFormControl-root {
+    margin: 0 !important;
+  }
+}
+
+.trans {
+  .MuiInput-underline {
+    background-color: transparent !important;
+  }
+}
+
+.MuiPaper-root {
+  background-image: unset !important;
+}
+// mui date picker
