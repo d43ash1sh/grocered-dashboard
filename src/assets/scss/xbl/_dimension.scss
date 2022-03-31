@@ -91,6 +91,7 @@ $mwidths: (
 /*----------------max width------------------*/
 $maxwidths: (
   300: 300px,
+  500: 500px,
   1300: 1300px,
 );
 @each $k, $v in $maxwidths {

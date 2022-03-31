@@ -6,9 +6,9 @@ const useRipple = () => {
     function rippleClick(e, onClick = null) {
         // const rect = e.target.getBoundingClientRect();
         const rect = e.target.closest(".ripple").getBoundingClientRect();
-        
+
         setCoords({
-            "--s": 0,
+            "--s": 0.05,
             "--o": 1
         });
 
