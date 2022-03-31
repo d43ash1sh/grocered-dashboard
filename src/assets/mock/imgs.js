@@ -37,15 +37,15 @@ const list = {
         { dp: u4, name: "Ishaan", amount: 1566 }
     ],
     products: [
-        { image: p1 },
-        { image: p2 },
-        { image: p3 },
-        { image: p4 },
-        { image: p5 },
-        { image: p6 },
-        { image: p7 },
-        { image: p8 },
-        { image: p9 }
+        { id: 100, image: p1, name: "Product 1", mrp: "134", qty: "200ml" },
+        { id: 101, image: p2, name: "Product 2", mrp: "45", qty: "500g" },
+        { id: 102, image: p3, name: "Product 3", mrp: "13", qty: "1Kg" },
+        { id: 103, image: p4, name: "Product 4", mrp: "87", qty: "20g" },
+        { id: 104, image: p5, name: "Product 5", mrp: "145", qty: "1L" },
+        { id: 105, image: p6, name: "Product 6", mrp: "245", qty: "20g" },
+        { id: 106, image: p7, name: "Product 7", mrp: "399", qty: "1Kg" },
+        { id: 107, image: p8, name: "Product 8", mrp: "35", qty: "20g" },
+        { id: 108, image: p9, name: "Product 9", mrp: "65", qty: "200g" }
     ],
     stories: [
         { image: s1, dp: u1, text: "Use up lots of cars" },

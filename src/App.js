@@ -8,7 +8,8 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import useDarkMode from "./hooks/useDarkMode";
 
 import { setSettings } from "./redux/settings";
-import LoadingBar from "./components/loading/LoadingBar";
+import LoadingBar from "./components/micro/LoadingBar";
+import Toast from "./components/micro/Toast";
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -70,9 +71,10 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <Suspense fallback={<LoadingBar />}>
                 {content}
+                <Toast />
             </Suspense>
-        </ThemeProvider>
 
+        </ThemeProvider>
     </>
 }
 

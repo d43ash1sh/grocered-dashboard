@@ -2,6 +2,7 @@ import React, { useState, cloneElement, Fragment } from "react";
 import useRipple from "../../hooks/useRipple";
 import useFocus from "../../hooks/useFocus";
 
+import noData from "../../assets/svg/no-data.svg";
 
 
 /*--------------------------
@@ -83,12 +84,22 @@ export const Ripple = ({ children, onClick }) => {
         </>
     );
 };
+
+
 /*--------------------------
           RIPPLE
 -------------------------*/
 
 
 
+
+export const NoData = ({ src, className }) => {
+    return (
+        <div className={className || `tc pt2 pb2`}>
+            <img src={src || noData} className="w50 mw300" alt="no data" />
+        </div>
+    );
+};
 
 
 

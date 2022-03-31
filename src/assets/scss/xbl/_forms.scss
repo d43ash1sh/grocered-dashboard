@@ -1,3 +1,25 @@
+@mixin focus-placeholder {
+  input:focus ~ label,
+  textarea:focus ~ label,
+  input:valid:not(:placeholder-shown) ~ label,
+  input:not(:placeholder-shown) ~ label,
+  textarea:valid:not(:placeholder-shown) ~ label {
+    @content;
+  }
+}
+
+/*------remove number tick-------*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/*------remove number tick-------*/
+
 /*------input-------*/
 input,
 textarea {
@@ -62,11 +84,7 @@ textarea {
   }
 
   /*label*/
-  input:focus ~ label,
-  textarea:focus ~ label,
-  input:valid:not(:placeholder-shown) ~ label,
-  input:not(:placeholder-shown) ~ label,
-  textarea:valid:not(:placeholder-shown) ~ label {
+  @include focus-placeholder {
     transform: translateY(-24px);
     font-size: 14px;
     background: var(--white);
@@ -127,17 +145,22 @@ textarea {
   label {
     color: var(--gray7);
   }
-
-  input:focus ~ label,
-  textarea:focus ~ label,
-  input:valid:not(:placeholder-shown) ~ label,
-  input:not(:placeholder-shown) ~ label,
-  textarea:valid:not(:placeholder-shown) ~ label {
+  @include focus-placeholder {
     transform: translateY(-11px);
     font-size: 12px;
     background: transparent;
   }
 }
+
+.no-focus-label.ninput {
+  input {
+    padding: 11px 15px;
+  }
+  @include focus-placeholder {
+    display: none;
+  }
+}
+
 /*------input-------*/
 
 /*-----checkbox----*/
