@@ -69,6 +69,7 @@ textarea {
     z-index: 1;
   }
 
+  input:invalid,
   input:invalid:not(:focus) {
     border: 1px solid #ff8989;
     color: #eb5a5a;

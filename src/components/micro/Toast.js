@@ -35,16 +35,12 @@ function Toast() {
     return (
         <div
             id="toast"
-            className={"w100 flex aic pf"}
+            className="flex aic pf w100 tr2 z9000 l50"
             data-show={ui.toast ? "1" : "0"}
             onClick={() => handleChange()}
         >
-            <div id="toast_mgs" className="lc1">
-                {ui.toast}
-            </div>
-            <div id="toast_close" className="cp tc">
-                &#9587;
-            </div>
+            <div className="lc1 mgs">{ui.toast}</div>
+            <div className="cp tc close ic40 ic ix-x"></div>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from "react-redux";
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import TextField from '@mui/material/TextField';
@@ -8,11 +9,11 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Button from '@mui/material/Button';
 
 import { Col, Input } from "../../../components/xbl";
-
 import useForm from "../../../hooks/useForm";
-
+import { showToast } from "../../../redux/ui";
 
 
 
@@ -295,27 +296,77 @@ export const Identification = () => {
 
 
 export const CustomAttribute = () => {
+    const dispatch = useDispatch();
+    const blankRow = { key: "", value: "" };
+
+    const [attributes, setAttributes] = useState([blankRow]);
+
+    const addRow = () => {
+        let nullValue = attributes.find(f => f.value.length === 0);
+        if (nullValue) {
+            dispatch(showToast("Existing boxes need to be filled"));
+            return;
+        }
+        setAttributes([...attributes, blankRow]);
+    }
+
+    const handleChange = (event, index, type = "key") => {
+        let v = event.target.value;
+        const temp = [...attributes];
+
+        if (type === "key") {
+            if (v.length > 30) {
+                dispatch(showToast(`Key should < 30 characters`));
+                return;
+            }
+            temp[index].key = v;
+        }
+        else {
+            if (temp[index].key === "") {
+                dispatch(showToast(`Key is required`));
+                return;
+            }
+            temp[index].value = v;
+        }
+
+        setAttributes(temp);
+    }
+
+
     return (
         <Col className="p50" card="card ofh p50 flat">
             <div className="header p50">
                 Custom attributes
             </div>
             {
-                [0, 1, 2].map((e, i) => <div key={i} className='flex aic fww'>
+                attributes.map((e, i) => <div key={i} className='flex aic fww'>
                     <Col xs="50" className="p50">
                         <Input
-                            className="m0 flat"
+                            className="m0 flat no-focus-label"
                             label="Key"
+                            value={e.key}
+                            minLength="1"
+                            maxLength="30"
+                            onChange={(e) => handleChange(e, i, "key")}
                         />
                     </Col>
                     <Col xs="50" className="p50">
                         <Input
-                            className="m0 flat"
+                            className="m0 flat no-focus-label"
                             label="Value"
+                            value={e.value}
+                            minLength="1"
+                            maxLength="200"
+                            onChange={(e) => handleChange(e, i, "value")}
+
                         />
                     </Col>
                 </div>)
             }
+
+            <div className='tc p2'>
+                <Button variant="contained" onClick={addRow}>Add row</Button>
+            </div>
 
         </Col>
     )

@@ -136,3 +136,13 @@
     display: none;
   }
 }
+
+.product-img {
+  &:hover .img-remove {
+    display: block;
+    .btn {
+      background: #0000005c;
+      backdrop-filter: blur(5px);
+    }
+  }
+}

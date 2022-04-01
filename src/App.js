@@ -40,7 +40,7 @@ const App = () => {
     const [count, setCount] = useState(0);
 
     // hooks
-    const [getSettings, saveSettings] = useLocalStorage("settings", {});
+    const [getSettings, saveSettings] = useLocalStorage("settings", { theme: true });
     const [, setTheme] = useDarkMode();
 
     // redux
@@ -53,6 +53,7 @@ const App = () => {
         //ignore first and second effect
         if (count === 0) {
             dispatch(setSettings(getSettings));
+
             setCount(count + 1);
         }
         else if (count === 1) {
