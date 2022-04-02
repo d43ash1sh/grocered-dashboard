@@ -6,7 +6,8 @@ import {
     TouchSensor,
     MouseSensor,
     useSensor,
-    useSensors
+    useSensors,
+    MeasuringStrategy
 } from '@dnd-kit/core';
 
 
@@ -17,7 +18,11 @@ import { SortableItem } from './SortableItem';
 import { Col, Ripple } from "../../../components/xbl";
 import ImageUploader from "../../../modals/image-uploader";
 
-
+const measuringConfig = {
+    droppable: {
+        strategy: MeasuringStrategy.Always,
+    }
+};
 
 export const AddImage = () => {
 
@@ -68,9 +73,10 @@ export const AddImage = () => {
                     sensors={sensors}
                     collisionDetection={closestCenter}
                     onDragEnd={handleDragEnd}
+                    measuring={measuringConfig}
                 >
                     <SortableContext items={selected} strategy={rectSortingStrategy}>
-                        {selected.map((e, i) => <SortableItem key={i} id={e.id} e={e} onDelete={removeImage} className="w50 sm-w33 md-w25 lg-w20 xl-w16 p50 product-img">
+                        {selected.map((e, i) => <SortableItem key={i} id={e.id} e={e} onDelete={removeImage} className="w50 sm-w33 md-w25 lg-w20 xl-w16 p50 product-img usn">
                             {/* <div className="aspect-1-1">
                                 <div className="bg br10 grayd bc " style={{
                                     backgroundImage: `url(${e.image})`

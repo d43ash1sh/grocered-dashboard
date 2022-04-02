@@ -70,7 +70,7 @@ export const Bull = ({ list, className }) => {
 /*--------------------------
           RIPPLE
 -------------------------*/
-export const Ripple = ({ children, onClick }) => {
+export const Ripple = ({ children, ...rest }) => {
     const { coords, rippleClick } = useRipple();
 
     return (
@@ -78,8 +78,9 @@ export const Ripple = ({ children, onClick }) => {
             {cloneElement(children, {
                 className: `${children.props.className} ripple`,
                 onMouseDown: (e) => rippleClick(e),
-                onClick,
-                style: coords
+                // onClick,
+                style: coords,
+                ...rest
             })}
         </>
     );

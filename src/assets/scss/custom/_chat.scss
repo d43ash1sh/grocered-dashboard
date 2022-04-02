@@ -1,0 +1,114 @@
+/*-----message bubble----------*/
+.chat {
+  .bottombar {
+    backdrop-filter: blur(10px);
+  }
+  .topbar {
+    background-color: #00000052;
+    @extend .bottombar;
+  }
+}
+.each-mgs {
+  --radius: 16px;
+
+  .mgs-block {
+    max-width: 80%;
+    @media (min-width: 1200px) {
+      max-width: 60%;
+    }
+  }
+
+  .bubble {
+    background-color: var(--accent);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 6px 12px;
+
+    &:before {
+      height: 12px;
+      width: 12px;
+      background-color: var(--accent);
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transform: skewY(-44deg);
+      z-index: 0;
+      border-radius: 3px;
+    }
+  }
+
+  &.first {
+    margin-top: 20px;
+  }
+  &.last {
+    margin-bottom: 20px;
+  }
+
+  &.left {
+    &.first .bubble {
+      border-bottom-left-radius: 4px;
+    }
+    &.middle .bubble {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    &.same-user.last .bubble {
+      border-top-left-radius: 4px;
+    }
+    &.last .bubble {
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &.right {
+    justify-content: flex-end;
+
+    &.first .bubble {
+      border-bottom-right-radius: 4px;
+    }
+    &.middle .bubble {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    &.same-user.last .bubble {
+      border-top-right-radius: 4px;
+    }
+    &.last .bubble {
+      border-bottom-right-radius: 4px;
+    }
+
+    .bubble {
+      background-color: var(--graye);
+      color: var(--gray5);
+
+      &:before {
+        background-color: var(--graye);
+        left: calc(100% - 12px);
+        transform: skewY(44deg);
+      }
+    }
+
+    // .user {
+    //   order: 2;
+    //   .mr-3 {
+    //     margin-right: 0;
+    //     margin-left: 0.75rem;
+    //   }
+    // }
+  }
+
+  &.first,
+  &.middle {
+    .user .bsc {
+      visibility: hidden;
+    }
+    .bubble {
+      border-radius: var(--radius);
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+/*-----message bubble----------*/

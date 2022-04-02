@@ -146,3 +146,20 @@
     }
   }
 }
+
+.collapsed-search {
+  width: 100%;
+  &[expanded="0"] {
+    width: 54px;
+
+    input {
+      width: 0;
+      padding: 0;
+    }
+
+    & > div {
+      padding-left: 4px;
+      border-radius: 50%;
+    }
+  }
+}

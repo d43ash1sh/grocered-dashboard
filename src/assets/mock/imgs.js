@@ -36,6 +36,77 @@ const list = {
         { dp: u2, name: "Ajay", amount: 456 },
         { dp: u4, name: "Ishaan", amount: 1566 }
     ],
+
+    chatlist: [
+        { dp: u1, id: 100, name: "Ishaan", text: "ok", date: "2m" },
+        { dp: u2, id: 101, name: "Dhruv", text: "So whats the plan", date: "20m" },
+        { dp: u3, id: 102, name: "Ram", text: "are you moving", date: "Just now" },
+        { dp: u4, id: 103, name: "Sayan", text: "I am just scared of ghost so I will not be able to join you guys", date: "1h" },
+        { dp: u5, id: 104, name: "Rohit", text: "Please share the order status", date: "29 Mar" },
+        { dp: u1, id: 105, name: "Soumick", text: "My refund is still under pending", date: "20 Mar" },
+        { dp: u3, id: 106, name: "Anjali", text: "Thats alright", date: "2min" },
+        { dp: u2, id: 107, name: "Ajay", text: "Sounds good to me", date: "5 feb" },
+        { dp: u4, id: 108, name: "Ishaan", text: "sure", date: "2min" },
+        { dp: u2, id: 109, name: "Dhruv", text: "So whats the plan", date: "20m" },
+        { dp: u3, id: 110, name: "Ram", text: "are you moving", date: "Just now" },
+    ],
+    chats: [
+        {
+            id: 100,
+            user: 565,
+            text: "hi grocered i have a query on my order",
+        },
+        {
+            id: 101,
+            user: 100,
+            text: "hi sayan",
+        },
+        {
+            id: 101,
+            user: 100,
+            text: "hi sayan we would love  to help you out",
+        },
+        {
+            id: 102,
+            user: 100,
+            text: "but before that, let us know the order id agains which you are facing problem. and also share the details of xyz and abc",
+        },
+        {
+            id: 103,
+            user: 565,
+            text: "my order id is 35345345",
+        },
+        {
+            id: 104,
+            user: 565,
+            text: "oky",
+        },
+        {
+            id: 105,
+            user: 565,
+            text: "hi sayan we would love  to help you out",
+        },
+        {
+            id: 106,
+            user: 100,
+            text: "but before that",
+        },
+        {
+            id: 107,
+            user: 100,
+            text: "let us know",
+        },
+        {
+            id: 108,
+            user: 565,
+            text: "but before that, let us know",
+        },
+        {
+            id: 109,
+            user: 100,
+            text: "messag 8, but before that, let us know the order id agains which you are facing problem. and also share the details of xyz and abc",
+        },
+    ],
     products: [
         { id: 100, image: p1, name: "Product 1", mrp: "134", qty: "200ml" },
         { id: 101, image: p2, name: "Product 2", mrp: "45", qty: "500g" },

@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 /*--------------------------
           Tabs
 -------------------------*/
-export const MuiTabs = ({ tabs, value, setValue }) => {
+export const MuiTabs = ({ tabs, value, setValue, tabStyle }) => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -16,7 +16,7 @@ export const MuiTabs = ({ tabs, value, setValue }) => {
     return <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
             {
-                tabs.map((e, i) => <Tab key={i} label={e} />)
+                tabs.map((e, i) => <Tab style={tabStyle} key={i} label={e} />)
             }
         </Tabs>
     </Box>

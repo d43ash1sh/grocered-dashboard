@@ -8,6 +8,7 @@ import { setUserDetails } from "../redux/user";
 import { Ripple } from "../components/xbl";
 import rawlist from "./menu";
 import MenuFooter from "./MenuFooter";
+import SearchBox from "../components/micro/SearchBox";
 
 const Empty = ({ children }) => {
 
@@ -16,13 +17,11 @@ const Empty = ({ children }) => {
     const [active, setActive] = useState("/dashboard");
     const [submenu, setSubmenu] = useState("/");
     const [list, setList] = useState(rawlist);
-    const [search, setSearch] = useState("");
 
 
     const f = 0;
 
     const searchHandler = (v) => {
-        setSearch(v);
 
         if (v === "") {
             setList(rawlist);
@@ -50,49 +49,19 @@ const Empty = ({ children }) => {
                 <div className="content pa t0 l0 w100 ofys tscroll p10 pr0">
                     <Logo alt="Logo" width="140px" className="mb1 mt1" />
 
-                    <div className="flex aic mb1 graye p25 pl50 br10 ofh pr">
-                        <input
-                            className="trans cgray7 bor0 p25 w100"
-                            placeholder="Search..."
-                            onChange={(e) => searchHandler(e.target.value)}
-                            value={search}
-                        />
-                        <div className="cp search-icon pr50 pl25 f08 pr ic30">
-                            <span show={search.length === 0 ? "1" : "0"} className="ix-search ic tr4 ic30 pa t0 r0" />
-                            <span show={search.length === 0 ? "0" : "1"} className="ix-x ic tr4 ic30 pa t0 r0" onClick={() => searchHandler("")} />
-                        </div>
+                    <SearchBox callback={searchHandler} />
 
+                    <div className="mt1">
+                        {
+                            list.map((e, i) => <Fragment key={i}>
+                                {
+                                    e.children ?
+                                        <Submenu e={e} active={active} setActive={setActive} submenu={submenu} setSubmenu={setSubmenu} /> :
+                                        <MenuItem e={e} active={active} setActive={setActive} setSubmenu={setSubmenu} />
+                                }
+                            </Fragment>)
+                        }
                     </div>
-
-                    {
-                        f === 9 && <div className="card p1">
-                            <button onClick={() => dispatch(setUserDetails({
-                                name: "Manak",
-                                dp: "manak-dp",
-                                email: "manak@grocered.in",
-                            }))}>
-                                Manak
-                            </button>
-                            <button onClick={() => dispatch(setUserDetails({
-                                name: "haris",
-                                dp: "Haris-dp",
-                                email: "haris@grocered.in",
-                            }))}>
-                                haris
-                            </button>
-                        </div>
-                    }
-
-
-                    {
-                        list.map((e, i) => <Fragment key={i}>
-                            {
-                                e.children ?
-                                    <Submenu e={e} active={active} setActive={setActive} submenu={submenu} setSubmenu={setSubmenu} /> :
-                                    <MenuItem e={e} active={active} setActive={setActive} setSubmenu={setSubmenu} />
-                            }
-                        </Fragment>)
-                    }
                 </div>
 
                 <MenuFooter user={user} />
