@@ -1,5 +1,50 @@
 import { createContext, useContext, useState } from "react";
 
+
+
+
+
+const me = {
+    id: 100,
+    name: "Grocered",
+    dp: "",
+};
+
+
+const modifyChats = (c) => {
+    const messagesLength = c.length - 1;
+    let oldUser = 999;
+
+    return c.map((message, i) => {
+
+        message.className = me.id === message.user ? "right " : "left ";
+
+        // if previous & current user are same
+        // if last message
+        // // if next user and current user is different
+        if (i === messagesLength ||
+            ((i < messagesLength) && (message.user !== c[i + 1].user))
+        ) {
+            message.className += oldUser === message.user ? "same-user last" : "last";
+        }
+        else if (message.user === oldUser) {
+            message.className += "middle same-user";
+        }
+        else {
+            message.className += "first";
+        }
+
+        oldUser = message.user;
+
+        return message
+    })
+}
+
+
+
+
+
+
 const DEFAULT_USER = {
     dp: "",
     id: 100,
@@ -14,8 +59,11 @@ export const chatContext = createContext({
     chats: null,
     activateChat: () => { },
     chatMessages: () => { },
+    pushMessages: () => { },
     clear: () => { },
 })
+
+
 
 
 
@@ -28,7 +76,13 @@ export function ChatContextProvider({ children }) {
     }
 
     const chatMessages = (messages) => {
-        setChats(messages)
+        //get messages then modify
+        setChats(modifyChats(messages))
+    }
+
+    const pushMessages = (newMessages) => {
+        //get messages then modify
+        setChats(modifyChats([...chats, ...newMessages]))
     }
 
     const clear = () => {
@@ -41,6 +95,7 @@ export function ChatContextProvider({ children }) {
         chats,
         activateChat,
         chatMessages,
+        pushMessages,
         clear
     }}>
         {children}
@@ -50,6 +105,6 @@ export function ChatContextProvider({ children }) {
 
 
 export function useChatContext() {
-    const { user, chats, activateChat, chatMessages, clear } = useContext(chatContext);
-    return { user, chats, activateChat, chatMessages, clear };
+    const { user, chats, activateChat, chatMessages, pushMessages, clear } = useContext(chatContext);
+    return { user, chats, activateChat, chatMessages, pushMessages, clear };
 }

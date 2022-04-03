@@ -16,7 +16,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import usePalette from "./hooks/usePalette";
 
 
-
+import { MqttContextProvider } from "./context/mqtt";
 
 const App = () => {
     const palette = usePalette();
@@ -70,11 +70,12 @@ const App = () => {
 
     return <>
         <ThemeProvider theme={theme}>
-            <Suspense fallback={<LoadingBar />}>
-                {content}
-                <Toast />
-            </Suspense>
-
+            <MqttContextProvider>
+                <Suspense fallback={<LoadingBar />}>
+                    {content}
+                    <Toast />
+                </Suspense>
+            </MqttContextProvider>
         </ThemeProvider>
     </>
 }
