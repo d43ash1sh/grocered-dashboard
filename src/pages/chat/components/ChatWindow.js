@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 
-import { Col, NoData } from "../../../components/xbl";
+import { Col, NoData, Ripple } from "../../../components/xbl";
 import ChatHolder from "./ChatHolder";
 
 import { useChatContext } from "../../../context/chat";
@@ -15,6 +15,7 @@ const topic = "chat";
 
 export const ChatWindow = () => {
     const { user,
+        me,
         chats,
         chatMessages,
         pushMessages } = useChatContext();
@@ -44,35 +45,39 @@ export const ChatWindow = () => {
         if (isConnected()) {
             subscribe(topic);
 
-            client.on("message", (topic, message, packet) => {
-
-                const payload = JSON.parse(new TextDecoder("utf-8").decode(message));
-
-                console.log(chats);
-                pushMessages([{
-                    id: 101,
-                    user: 100,
-                    text: payload.payload,
-                }]);
-            });
-
+            onMessage(messageHandler);
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [client]);
 
 
+    const messageHandler = (payload) => {
+        if (payload.mgs) {
+            console.log("chatWindow messageHandler", payload);
 
+            const { id, user, text } = payload.mgs;
+
+            pushMessages([{ id, user, text }]);
+        }
+    }
 
 
 
 
     const [typing, setTyping] = useState("");
     const onSend = () => {
+        if (typing.length === 0) {
+            return;
+        }
 
         publish(topic, {
-            payload: typing,
-            date: new Date().toTimeString()
+            mgs: {
+                id: 101,
+                user: me.id,
+                text: typing
+            },
+            date: Date.now()
         });
 
         setTyping("");
@@ -156,11 +161,15 @@ function BottomBar({ typing, setTyping, onSend }) {
     return <div className="p50 bottombar flex aic jcsb pa w100 b0 l0 z10">
         <input
             value={typing}
-            onKeyDown={onEnter}
+            // onKeyDown={onEnter}
             onChange={onTyping}
             className="h40p graye bor0 p50 br20 w-50 f1 cgray7 mr50 pl1"
             placeholder="Type message..."
         />
-        <button className="ix-x graye cp bor0 br50 ic ic45" onClick={onSend}></button>
+        <Ripple onClick={onSend}>
+            <div className="br50">
+                <button className="ix-send f12 graye caccent hover-dark cp bor0 br50 ic ic45"></button>
+            </div>
+        </Ripple>
     </div>
 }

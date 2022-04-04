@@ -5,17 +5,26 @@ import { createContext, useContext, useState } from "react";
 
 
 const me = {
-    id: 100,
+    id: Math.floor(Math.random() * 10) > 5 ? 100 : 565,
     name: "Grocered",
     dp: "",
 };
 
 
-const modifyChats = (c) => {
+const modifyChats = (c, existinLength = 0) => {
     const messagesLength = c.length - 1;
     let oldUser = 999;
 
     return c.map((message, i) => {
+
+        //dont modify existing
+        if (existinLength && i < (existinLength - 1)) {
+            if (i === (existinLength - 2)) {
+                oldUser = message.user;
+            }
+            return message;
+        }
+
 
         message.className = me.id === message.user ? "right " : "left ";
 
@@ -56,6 +65,7 @@ const DEFAULT_USER = {
 
 export const chatContext = createContext({
     user: null,
+    me: null,
     chats: null,
     activateChat: () => { },
     chatMessages: () => { },
@@ -82,7 +92,7 @@ export function ChatContextProvider({ children }) {
 
     const pushMessages = (newMessages) => {
         //get messages then modify
-        setChats(modifyChats([...chats, ...newMessages]))
+        setChats(prevArray => modifyChats([...prevArray, ...newMessages], prevArray.length))
     }
 
     const clear = () => {
@@ -92,6 +102,7 @@ export function ChatContextProvider({ children }) {
 
     return (<chatContext.Provider value={{
         user,
+        me,
         chats,
         activateChat,
         chatMessages,
@@ -105,6 +116,6 @@ export function ChatContextProvider({ children }) {
 
 
 export function useChatContext() {
-    const { user, chats, activateChat, chatMessages, pushMessages, clear } = useContext(chatContext);
-    return { user, chats, activateChat, chatMessages, pushMessages, clear };
+    const { user, me, chats, activateChat, chatMessages, pushMessages, clear } = useContext(chatContext);
+    return { user, me, chats, activateChat, chatMessages, pushMessages, clear };
 }

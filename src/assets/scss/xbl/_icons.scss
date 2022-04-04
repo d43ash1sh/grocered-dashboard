@@ -19,7 +19,6 @@ Qwerty098#
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .ix-box:before {
   content: "\0041";
 }
@@ -97,4 +96,16 @@ Qwerty098#
 }
 .ix-three-dot:before {
   content: "\005a";
+}
+.ix-love-line:before {
+  content: "\0061";
+}
+.ix-send:before {
+  content: "\0062";
+}
+.ix-love:before {
+  content: "\0063";
+}
+.ix-share:before {
+  content: "\0064";
 }

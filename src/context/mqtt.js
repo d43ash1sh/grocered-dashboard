@@ -1,5 +1,7 @@
 
-import mqtt from "mqtt";
+// import mqtt from "mqtt";
+
+import { connect } from "../assets/js/mqtt";
 import { createContext, useContext, useState } from "react";
 
 
@@ -33,7 +35,7 @@ export function MqttContextProvider({ children }) {
         }
 
         console.log("Connecting");
-        let temp_client = mqtt.connect(URL);
+        let temp_client = connect(URL);
 
         temp_client.on('connect', (client_a) => {
             //update client
