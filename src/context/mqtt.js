@@ -1,13 +1,19 @@
 
-import mqtt from "mqtt";
+import mqtt from "precompiled-mqtt";
 
-// import { connect } from "../assets/js/mqtt";
 import { createContext, useContext, useState } from "react";
 
+const urls = {
+    test: "mqtt://test.mosquitto.org:8081",
 
+    local: "ws://192.168.43.116:8080",
+    localSsl: "wss://192.168.43.116:8081",
 
-// const URL = "mqtt://test.mosquitto.org:8081";
-const URL = "ws://192.168.43.116:1234";
+    aws: "ws://grocered.online:8080",
+    awsSsl: "wss://grocered.online:8081",
+}
+
+const URL = urls.awsSsl;
 const TOPIC = "grocered";
 
 
