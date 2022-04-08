@@ -12,7 +12,7 @@ const urls = {
     aws: "ws://grocered.online:8080",
     awsSsl: "wss://grocered.online:8081",
 }
-/// url
+/// url new
 
 const URL = urls.awsSsl;
 const TOPIC = "grocered";
