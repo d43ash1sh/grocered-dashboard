@@ -102,16 +102,16 @@ export const Expiry = () => {
             <div className="w100 ofh">
                 <div className="flex f08 p50 tc cgray7 pr">
                     {
-                        products.map((e, i) => <Link to={i} key={i} className="p50">
+                        products.map((e, i) => <Link to="/dashboard/products/expiring" key={i} className="p50">
                             <div className="ic100 grayd br10 bc" style={{
                                 backgroundImage: `url(${e.image})`
                             }}></div>
                             <div className="mt10">30 Days</div>
                         </Link>)
                     }
-                    <div className="viewmore-right pa r0 t0 h100 p1 pl2">
+                    <Link className="viewmore-right pa r0 t0 h100 p1 pl2" to="/dashboard/products/expiring">
                         <div className="ic50 mt75 f14 ic ix-arrow rot-90 theme-t8 br50 mbtn"></div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </Col>
