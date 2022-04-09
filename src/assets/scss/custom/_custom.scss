@@ -163,3 +163,54 @@
     }
   }
 }
+
+.order-row {
+  &:hover {
+    .amount {
+      opacity: 0;
+    }
+    .buttons {
+      display: flex;
+    }
+  }
+}
+
+.priority {
+  &[priority="1"] .button {
+    background-color: #{transparentize($green, 0.8)};
+    color: var(--green);
+  }
+  &[priority="2"] .button {
+    background-color: #{transparentize($yellow, 0.8)};
+    color: var(--yellow);
+  }
+  &[priority="3"] .button {
+    background-color: #{transparentize($red, 0.8)};
+    color: var(--red);
+  }
+}
+
+.feedback-row {
+  .text {
+    @include media("md") {
+      width: calc(100% - 300px);
+      padding-left: 20px;
+    }
+  }
+}
+
+.feedback-page {
+  .sidebar {
+    width: 0;
+    position: fixed;
+  }
+
+  &:not([sidebar="0"]) {
+    .main {
+      width: calc(100% - 300px);
+    }
+    .sidebar {
+      width: 300px;
+    }
+  }
+}

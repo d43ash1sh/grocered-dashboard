@@ -36,6 +36,14 @@ $colors: (
 .hover-dark:hover {
   background-color: var(--hover-dark);
 }
+.hover-graye:hover {
+  background-color: var(--graye);
+}
+
+.black-06 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .accent-t8 {
   background-color: #{transparentize($accent, 0.85)};
 }

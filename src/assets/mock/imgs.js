@@ -37,6 +37,20 @@ const list = {
         { dp: u4, name: "Ishaan", amount: 1566 }
     ],
 
+    feedbacks: [
+        { id: 1, dp: u1, priority: 1, name: "Ishaan", date: "2m" },
+        { id: 2, dp: u2, priority: 2, name: "Dhruv", date: "20m" },
+        { id: 3, dp: u3, priority: 2, name: "Ram", date: "Just now" },
+        { id: 4, dp: u4, priority: 2, name: "Sayan", date: "1 Day" },
+        { id: 5, dp: u5, priority: 1, name: "Rohit", date: "2 Apr" },
+        { id: 6, dp: u1, priority: 3, name: "Soumick", date: "5m" },
+        { id: 7, dp: u3, priority: 2, name: "Anjali", date: "6h" },
+        { id: 8, dp: u2, priority: 3, name: "Ajay", date: "15m" },
+        { id: 9, dp: u4, priority: 3, name: "Ishaan", date: "25 Mar" }
+    ],
+
+
+
     chatlist: [
         { dp: u1, id: 100, name: "Ishaan", text: "ok", date: "2m" },
         { dp: u2, id: 101, name: "Dhruv", text: "So whats the plan", date: "20m" },

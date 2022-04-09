@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Col, Ripple } from "../../components/xbl";
-import OrderRow from "../../components/rows/OrderRow";
+import OrderMiniRow from "../../components/rows/OrderMiniRow";
 import StoryCard from "../../components/rows/StoryCard";
 import { ApexChart } from "../../components/charts/Line";
 
@@ -22,7 +22,7 @@ export const ReceviedOrders = () => {
             </div>
             <div className="lh14">
                 {
-                    orders.map((e, i) => <OrderRow key={i} data={e} />)
+                    orders.map((e, i) => <OrderMiniRow key={i} data={e} />)
                 }
             </div>
         </Col>
@@ -44,7 +44,7 @@ export const UpcommingDelivery = () => {
             </div>
             <div className="lh14">
                 {
-                    orders.map((e, i) => <OrderRow key={i} data={e} />)
+                    orders.map((e, i) => <OrderMiniRow key={i} data={e} />)
                 }
             </div>
         </Col>
@@ -158,7 +158,7 @@ export const ProcessingOrders = () => {
             </div>
             <div className="lh14">
                 {
-                    orders.map((e, i) => <OrderRow key={i} data={e} />)
+                    orders.map((e, i) => <OrderMiniRow key={i} data={e} />)
                 }
             </div>
         </Col>

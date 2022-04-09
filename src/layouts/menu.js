@@ -144,6 +144,10 @@ const list = [
         name: "HR",
         icon: "job",
         url: "/dashboard/hr",
+    }, {
+        name: "Settings",
+        icon: "settings",
+        url: "/dashboard/settings",
     },
 ];
 export default list;

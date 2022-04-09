@@ -177,3 +177,35 @@
   }
 }
 /*----dropzone----*/
+
+.badge {
+  position: relative;
+  &:after {
+    content: attr(count);
+    background-color: var(--grayc);
+    height: 20px;
+    min-width: 20px;
+    padding: 0 3px;
+    border-radius: 20px;
+    position: absolute;
+    top: -3px;
+    right: -24px;
+    color: #fff;
+    font-size: 0.7em;
+    font-weight: bold;
+
+    @extend .ic;
+  }
+
+  &[count="0"]:after {
+    display: none;
+  }
+  &:not([count="0"]) {
+    margin-right: 20px;
+  }
+}
+.Mui-selected {
+  .badge:after {
+    background-color: var(--theme);
+  }
+}

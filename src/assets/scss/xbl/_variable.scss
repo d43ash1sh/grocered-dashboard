@@ -1,6 +1,12 @@
 $theme: #00dbea;
 $accent: #3f6cff;
 
+$red: #f35177;
+$orange: #ff9a57;
+$yellow: #feef90;
+$green: #01d48e;
+$blue: #3c7eff;
+
 /*---------------declare variables--------------*/
 :root {
   --font: "Poppins", Helvetica, sans-serif, arial;
@@ -30,11 +36,11 @@ $accent: #3f6cff;
   --white: #ffffff;
   --black: #181b2a;
 
-  --red: #f35177;
-  --orange: #ff9a57;
-  --yellow: #feef90;
-  --green: #01d48e;
-  --blue: #3c7eff;
+  --red: #{$red};
+  --orange: #{$orange};
+  --yellow: #{$yellow};
+  --green: #{$green};
+  --blue: #{$blue};
 
   --hover-dark: #2e32420d;
 

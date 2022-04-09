@@ -1,6 +1,7 @@
-import React, { useState, cloneElement, Fragment } from "react";
+import React, { useState, cloneElement, Fragment, useRef } from "react";
 import useRipple from "../../hooks/useRipple";
 import useFocus from "../../hooks/useFocus";
+import useOnOutside from "../../hooks/useOnOutside";
 
 import noData from "../../assets/svg/no-data.svg";
 
@@ -91,6 +92,25 @@ export const Ripple = ({ children, ...rest }) => {
           RIPPLE
 -------------------------*/
 
+
+
+
+export const Threedot = ({ children }) => {
+    const [more, setmore] = useState(false);
+
+    const refMenu = useRef();
+    useOnOutside(refMenu, () => setmore(false));
+
+
+    return (<div className="ic40 pr">
+        <div onClick={() => setmore(true)} className="ix-three-dot cgraya ic40 br50 ic hover-graye"></div>
+        {
+            more && <div ref={refMenu} className="white bslg dark pa t0 r0 br10 z10 pt50">
+                {children}
+            </div>
+        }
+    </div>);
+};
 
 
 

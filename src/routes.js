@@ -181,6 +181,10 @@ const routes = [
                 path: "",
                 element: <Feedbacks />,
             },
+            {
+                path: ":id",
+                element: <Feedbacks />,
+            },
         ]
     },
 ];
