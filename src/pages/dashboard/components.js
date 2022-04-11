@@ -135,9 +135,9 @@ export const Stories = () => {
                     }
 
                 </div>
-                <div className="viewmore-right pa r0 t0 h100 p1 pl3 flex fdc jcc">
+                <Link to="/dashboard/stories" className="viewmore-right pa r0 t0 h100 p1 pl3 flex fdc jcc">
                     <div className="ic50 mt75 f14 ic ix-arrow rot-90 theme-t8 br50 mbtn"></div>
-                </div>
+                </Link>
             </div>
         </Col>
     )
