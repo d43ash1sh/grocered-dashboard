@@ -33,6 +33,7 @@ const LocalCategories = lazy(() => import('./pages/locals/categories'));
 
 const Feedbacks = lazy(() => import('./pages/feedbacks'));
 const FeedbackInternal = lazy(() => import('./pages/feedbacks/internal'));
+const FeedbackBugs = lazy(() => import('./pages/feedbacks/bugs'));
 
 
 
@@ -73,6 +74,10 @@ const routes = [
             },
             {
                 path: "stories",
+                element: <Stories />,
+            },
+            {
+                path: "stories/:id",
                 element: <Stories />,
             },
             {
@@ -176,6 +181,10 @@ const routes = [
             {
                 path: "internal",
                 element: <FeedbackInternal />,
+            },
+            {
+                path: "bugs",
+                element: <FeedbackBugs />,
             },
             {
                 path: "",

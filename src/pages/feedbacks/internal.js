@@ -21,7 +21,7 @@ export default function FeedbackInternal() {
     ]
 
     return (
-        <div className="feedback-page" sidebar={params.id || 0}>
+        <div className="sidebar-300" sidebar={params.id || 0}>
             <div className="p1 main w100 tr2">
                 <div>
                     <div className="ps t0 z10 bg ">

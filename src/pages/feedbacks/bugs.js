@@ -16,9 +16,10 @@ export default function Feedbacks() {
     const feedbacks = mock.feedbacks;
 
     const tabs = [
-        <div className="badge" count="1">Unreplied</div>,
-        <div className="badge" count="3">Replied</div>,
-        <div className="badge" count="30">Closed</div>,
+        <div className="badge" count="1">Reported</div>,
+        <div className="badge" count="5">Assigned</div>,
+        <div className="badge" count="0">On progress</div>,
+        <div className="badge" count="25">Fixed</div>,
     ]
 
     return (
@@ -40,12 +41,18 @@ export default function Feedbacks() {
 
                     <TabPanel value={tab} index={1} className="card mt1">
                         {
-                            feedbacks.slice(3, 5).map((data, i) => <FeedbackRow key={i} data={data} />)
+                            [...feedbacks.slice(3, 5)].map((data, i) => <FeedbackRow key={i} data={data} />)
                         }
                     </TabPanel>
                     <TabPanel value={tab} index={2} className="card mt1">
                         {
-                            feedbacks.slice(2, 3).map((data, i) => <FeedbackRow key={i} data={data} />)
+                            [...feedbacks.slice(2, 3)].map((data, i) => <FeedbackRow key={i} data={data} />)
+                        }
+                    </TabPanel>
+
+                    <TabPanel value={tab} index={3} className="card mt1">
+                        {
+                            feedbacks.slice(1, 5).map((data, i) => <FeedbackRow key={i} data={data} />)
                         }
                     </TabPanel>
 

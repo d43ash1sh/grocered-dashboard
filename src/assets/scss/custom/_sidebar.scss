@@ -42,3 +42,32 @@ $sidebar: 230px;
     }
   }
 }
+
+/*----pages having right side bar----*/
+.sidebar-300,
+.sidebar-350,
+.sidebar-400 {
+  .sidebar {
+    width: 0;
+    position: fixed;
+  }
+
+  &:not([sidebar="0"]) {
+    .main {
+      width: calc(100% - var(--sidebar-width));
+    }
+    .sidebar {
+      width: var(--sidebar-width);
+    }
+  }
+}
+.sidebar-300 {
+  --sidebar-width: 300px;
+}
+.sidebar-350 {
+  --sidebar-width: 350px;
+}
+.sidebar-400 {
+  --sidebar-width: 400px;
+}
+/*----pages having right side bar----*/

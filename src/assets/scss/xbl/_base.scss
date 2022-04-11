@@ -98,6 +98,7 @@ e = eee
 /*-------------------------border radius-----------------------*/
 $ics: (
   0: 0,
+  2: 2px,
   5: 5px,
   8: 8px,
   10: 10px,
@@ -235,11 +236,15 @@ $opacitys: (
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.lc2 {
+.lc2,
+.lc3 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+.lc3 {
+  -webkit-line-clamp: 3;
 }
 
 .lh1 {
@@ -324,17 +329,19 @@ textarea {
   }
 }
 
-.tscroll {
-  &::-webkit-scrollbar {
-    width: 16px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-clip: content-box;
-    border: 5px solid transparent;
-    border-radius: 8px;
-    box-shadow: inset 0 0 0 10px #8e8fb300;
-  }
-  &:hover::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 0 10px #9192ad3b;
+@media (min-width: 992px) {
+  .tscroll {
+    &::-webkit-scrollbar {
+      width: 16px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-clip: content-box;
+      border: 5px solid transparent;
+      border-radius: 8px;
+      box-shadow: inset 0 0 0 10px #8e8fb300;
+    }
+    &:hover::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 0 10px #9192ad3b;
+    }
   }
 }

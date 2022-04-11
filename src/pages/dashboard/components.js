@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Col, Ripple } from "../../components/xbl";
 import OrderMiniRow from "../../components/rows/OrderMiniRow";
-import StoryCard from "../../components/rows/StoryCard";
+import StoryCard from "../../components/cards/Story";
 import { ApexChart } from "../../components/charts/Line";
 
 import mock from "../../assets/mock/imgs";
@@ -128,14 +128,15 @@ export const Stories = () => {
             <div className="header p1">
                 Trending stories
             </div>
-            <div className="w100 ofh">
-                <div className="flex f08 p50 cwhite pr">
+            <div className="w100 ofh pr">
+                <div className="flex f08 p50 cwhite " style={{ width: `${200 * 7}px` }}>
                     {
-                        stories.map((e, i) => <StoryCard key={i} data={e} />)
+                        stories.slice(0, 7).map((e, i) => <StoryCard key={i} data={e} width="150px" />)
                     }
-                    <div className="viewmore-right pa r0 t0 h100 p1 pl3 flex fdc jcc">
-                        <div className="ic50 mt75 f14 ic ix-arrow rot-90 theme-t8 br50 mbtn"></div>
-                    </div>
+
+                </div>
+                <div className="viewmore-right pa r0 t0 h100 p1 pl3 flex fdc jcc">
+                    <div className="ic50 mt75 f14 ic ix-arrow rot-90 theme-t8 br50 mbtn"></div>
                 </div>
             </div>
         </Col>

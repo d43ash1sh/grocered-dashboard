@@ -133,11 +133,26 @@ const list = {
         { id: 108, image: p9, name: "Product 9", mrp: "65", qty: "200g" }
     ],
     stories: [
-        { image: s1, dp: u1, text: "Use up lots of cars" },
-        { image: s2, dp: u2, text: "10 Expert Tips for Grocery Shopping on a Budget" },
-        { image: s3, dp: u3, text: "Learn how to Buy perishable foods in quantities you’ll use" },
-        { image: s4, dp: u4, text: "10 Expert Tips for Grocery Shopping on a Budget to use up lots of tomatoes" },
-        { image: s1, dp: u5, text: "18 easy recipes to use up lots of tomatoes" },
+        { id: 1, image: s1, dp: u1, text: "Use up lots of cars" },
+        { id: 2, image: s2, dp: u2, text: "10 Expert Tips for Grocery Shopping on a Budget" },
+        { id: 3, image: s3, dp: u3, text: "Learn how to Buy perishable foods in quantities you’ll use" },
+        { id: 103, image: s4, dp: u4, text: "Long The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs" },
+        { id: 4, image: s1, dp: u5, text: "18 easy recipes to use up lots of tomatoes" },
+        { id: 5, image: s2, dp: u1, text: "The first evidence of carrot used as a food crop is in the Iranian Plateau and the Persian Empire in the 10th century AD" },
+        { id: 6, image: s4, dp: u2, text: "10 Expert Tips for Grocery Shopping on a Budget" },
+        { id: 7, image: s3, dp: u3, text: "Learn how to Buy perishable foods in quantities you’ll use" },
+        { id: 8, image: s2, dp: u4, text: "Food crop is in the Iranian Plateau and the Persian Empire in the 10th century AD" },
+        { id: 9, image: s4, dp: u5, text: "Persian Empire in the 10th century AD" },
+        { id: 10, image: s1, dp: u1, text: "Use up lots of cars" },
+        { id: 11, image: s2, dp: u2, text: "10 Expert Tips for Grocery Shopping on a Budget" },
+        { id: 12, image: s3, dp: u3, text: "Learn how to Buy perishable foods in quantities you’ll use" },
+        { id: 13, image: s4, dp: u4, text: "10 Expert Tips for Grocery Shopping on a Budget to use up lots of tomatoes" },
+        { id: 14, image: s1, dp: u5, text: "18 easy recipes to use up lots of tomatoes" },
+        { id: 15, image: s2, dp: u1, text: "The first evidence of carrot used as a food crop is in the Iranian Plateau and the Persian Empire in the 10th century AD" },
+        { id: 16, image: s4, dp: u2, text: "10 Expert Tips for Grocery Shopping on a Budget" },
+        { id: 17, image: s3, dp: u3, text: "Learn how to Buy perishable foods in quantities you’ll use" },
+        { id: 18, image: s2, dp: u4, text: "Food crop is in the Iranian Plateau and the Persian Empire in the 10th century AD" },
+        { id: 19, image: s4, dp: u5, text: "Persian Empire in the 10th century AD" },
     ]
 };
 export default list;

@@ -55,13 +55,23 @@ export const Bull = ({ list, className }) => {
         {
             list.map((e, i) => <Fragment key={i}>
                 {
-                    i > 0 && <span className="ml25 mr25 f18 cgrayc lh1">&bull;</span>
+                    i > 0 && <span className="ml25 mr25 f18 o4 lh1">&bull;</span>
                 }
                 <span>{e}</span>
             </Fragment>)
         }
     </div>
 }
+
+
+export const Avatar = ({ className, img }) => {
+    return <div
+        className={`avatar ic30 br50 bc ${className}`}
+        style={{
+            backgroundImage: `url(${img})`
+        }} />
+}
+
 /*--------------------------
           LAYOUTS
 -------------------------*/

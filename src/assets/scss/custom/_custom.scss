@@ -55,7 +55,7 @@
 
 .story {
   .gradient {
-    background-image: linear-gradient(180deg, transparent 20%, #000000cc 70%);
+    background-image: linear-gradient(180deg, transparent 20%, #000000d1 70%);
   }
 }
 
@@ -199,18 +199,47 @@
   }
 }
 
-.feedback-page {
-  .sidebar {
-    width: 0;
-    position: fixed;
+.MuiChip-colorDefault {
+  background-color: var(--grayd) !important;
+  &.mini {
+    height: 24px;
+    font-size: 11px;
+    .MuiChip-deleteIcon {
+      margin: 0 1px 0 -6px;
+    }
   }
+}
 
-  &:not([sidebar="0"]) {
-    .main {
-      width: calc(100% - 300px);
-    }
-    .sidebar {
-      width: 300px;
+.avatar {
+  background-color: #fff;
+  &.wbr {
+    box-shadow: 0 0 0 2px #ededed, 0 0 15px #00000078;
+  }
+}
+
+.story {
+  .progress {
+    line {
+      stroke-linecap: round;
     }
   }
+}
+
+.story-read {
+  .head {
+    span {
+      background-color: var(--accent);
+      padding: 2px 3px;
+      &:first-child {
+        padding-left: 10px;
+      }
+      &:last-child {
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+.obc {
+  overscroll-behavior: contain;
 }

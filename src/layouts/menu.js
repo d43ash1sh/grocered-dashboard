@@ -93,6 +93,9 @@ const list = [
             {
                 name: "Internal feedback",
                 url: "/dashboard/feedbacks/internal",
+            }, {
+                name: "Bug reporting",
+                url: "/dashboard/feedbacks/bugs",
             },
         ]
     },
