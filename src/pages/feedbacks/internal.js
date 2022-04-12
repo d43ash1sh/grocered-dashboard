@@ -15,9 +15,9 @@ export default function FeedbackInternal() {
     const feedbacks = mock.feedbacks;
 
     const tabs = [
-        <div className="badge" count="3">New</div>,
-        <div className="badge" count="0">On process</div>,
-        <div className="badge" count="30">Closed</div>,
+        <div className="count" count="3">New</div>,
+        <div className="count" count="0">On process</div>,
+        <div className="count" count="30">Closed</div>,
     ]
 
     return (

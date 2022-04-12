@@ -178,7 +178,7 @@
 }
 /*----dropzone----*/
 
-.badge {
+.count {
   position: relative;
   &:after {
     content: attr(count);
@@ -205,7 +205,7 @@
   }
 }
 .Mui-selected {
-  .badge:after {
+  .count:after {
     background-color: var(--theme);
   }
 }

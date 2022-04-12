@@ -16,10 +16,10 @@ export default function Feedbacks() {
     const feedbacks = mock.feedbacks;
 
     const tabs = [
-        <div className="badge" count="1">Reported</div>,
-        <div className="badge" count="5">Assigned</div>,
-        <div className="badge" count="0">On progress</div>,
-        <div className="badge" count="25">Fixed</div>,
+        <div className="count" count="1">Reported</div>,
+        <div className="count" count="5">Assigned</div>,
+        <div className="count" count="0">On progress</div>,
+        <div className="count" count="25">Fixed</div>,
     ]
 
     return (

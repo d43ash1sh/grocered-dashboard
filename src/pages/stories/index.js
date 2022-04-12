@@ -21,9 +21,9 @@ export default function Stories() {
     // ----- tabs
     const [tab, setTab] = useState(0);
     const tabs = [
-        <div className="badge" count="0">Trending</div>,
-        <div className="badge" count="0">All stories</div>,
-        <div className="badge" count="5">Review pending</div>,
+        <div className="count" count="0">Trending</div>,
+        <div className="count" count="0">All stories</div>,
+        <div className="count" count="5">Review pending</div>,
     ];
 
 
@@ -47,9 +47,14 @@ export default function Stories() {
         setWidth(100 / Math.floor(parentWidth / (parentWidth < 1024 ? 160 : 200)));
 
     }
+
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(calcWidth, [containerwidth]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(calcWidth, [params.id]);
-    // ---- for handling width fo cards
+    // ---- for handling width of cards
 
 
     return (

@@ -85,6 +85,10 @@ const routes = [
                 element: <Notes />,
             },
             {
+                path: "notes/:id",
+                element: <Notes />,
+            },
+            {
                 path: "hr",
                 element: <Hr />,
             },
