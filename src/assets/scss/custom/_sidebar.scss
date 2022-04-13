@@ -48,8 +48,10 @@ $sidebar: 230px;
 .sidebar-350,
 .sidebar-400 {
   .sidebar {
-    width: 0;
+    width: var(--sidebar-width);
     position: fixed;
+    transform: translateX(100%);
+    visibility: hidden;
   }
 
   &:not([sidebar="0"]) {
@@ -57,7 +59,11 @@ $sidebar: 230px;
       width: calc(100% - var(--sidebar-width));
     }
     .sidebar {
-      width: var(--sidebar-width);
+      transform: translateX(0);
+      visibility: visible;
+      &.right {
+        animation: slideRight 0.2s linear;
+      }
     }
   }
 }

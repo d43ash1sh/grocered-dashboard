@@ -22,6 +22,27 @@ import u5 from "./image/u-1.webp";
 
 
 const list = {
+    schedules: [
+        {
+            id: 100,
+            time: "9:30",
+            repeat: [1, 4],
+            date: false,
+            active: true,
+            mgs: "This mesage will be published",
+            users: []
+        },
+        {
+            id: 101,
+            time: "11:45",
+            repeat: [2, 3, 4],
+            date: false,
+            active: false,
+            mgs: "This mesage will be published 2",
+            users: []
+        }
+    ],
+
     s: [s1, s2, s3, s4, s1],
     u: [u1, u2, u3, u4, u5],
     p: [p1, p2, p3, p4, p5, p6, p7, p8, p9],

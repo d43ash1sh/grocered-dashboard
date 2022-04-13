@@ -43,6 +43,7 @@ const Credentials = lazy(() => import('./pages/credentials'));
 const Users = lazy(() => import('./pages/users'));
 const Vendor = lazy(() => import('./pages/vendor'));
 const Analytics = lazy(() => import('./pages/analytics'));
+const Schedule = lazy(() => import('./pages/schedule'));
 
 
 const routes = [
@@ -108,6 +109,15 @@ const routes = [
                 path: "analytics",
                 element: <Analytics />,
             },
+            {
+                path: "schedule",
+                element: <Schedule />,
+            },
+            {
+                path: "schedule/:id",
+                element: <Schedule />,
+            },
+
             {
                 path: "*",
                 element: <DashboardPage />,

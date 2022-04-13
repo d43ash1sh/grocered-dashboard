@@ -243,3 +243,25 @@
 .obc {
   overscroll-behavior: contain;
 }
+
+.schedule-row {
+  .switch {
+    @include media("md", max) {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+  .mgs {
+    @include media("md") {
+      width: calc(100% - 400px);
+    }
+  }
+}
+
+.timepicker {
+  .MuiTextField-root {
+    background-color: var(--graye);
+    border-radius: var(--input-radius);
+  }
+}

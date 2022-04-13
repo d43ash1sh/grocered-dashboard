@@ -106,6 +106,11 @@ const list = [
         url: "/dashboard/analytics",
     },
     {
+        name: "Schedule",
+        icon: "clock",
+        url: "/dashboard/schedule",
+    },
+    {
         name: "Vendor",
         icon: "shop",
         url: "/dashboard/vendor",

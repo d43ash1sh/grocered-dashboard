@@ -23,7 +23,7 @@ export default function Feedbacks() {
 
     return (
         <div className="sidebar-300" sidebar={params.id || 0}>
-            <div className="p1 main w100 tr2">
+            <div className="p1 main w100">
                 <div>
                     <div className="ps t0 z10 bg ">
                         <MuiTabs

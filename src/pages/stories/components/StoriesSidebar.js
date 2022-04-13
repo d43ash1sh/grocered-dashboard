@@ -31,7 +31,7 @@ const StoriesSidebar = ({ id }) => {
 
     if (!data) return <></>;
 
-    return (<div className="sidebar pf h100 t0 r0 ofh tr2 white z10">
+    return (<div className="sidebar right pf h100 t0 r0 ofh tr2 white z10">
         <div className="wrap pa-100 obc oya tscroll">
 
 

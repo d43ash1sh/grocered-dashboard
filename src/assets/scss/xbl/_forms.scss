@@ -154,7 +154,8 @@ textarea {
 }
 
 .no-focus-label.ninput {
-  input {
+  input,
+  textarea {
     padding: 11px 15px;
   }
   @include focus-placeholder {
